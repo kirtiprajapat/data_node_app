@@ -12,7 +12,7 @@ app.post('/submit',(req,res)=>{
     const sql = 'insert into users(name,email) values(?,?)';
     db.query(sql,[name,email],(err,result)=>{
         if(err) throw err;
-        res.send('Data inserted successfully');
+        res.send('Data inserted successfully  ' + result.affectedRows);
     });
 
 });
